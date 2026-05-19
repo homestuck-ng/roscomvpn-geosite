@@ -150,17 +150,17 @@ jobs:
                   next
                 }
                 if (s ~ /^include:/) {
-  sub(/^include:/, "", s)
+                  sub(/^include:/, "", s)
 
-  incfile="'$work'/" s
+                  incfile="'$work'/" s
 
-  while ((getline line < incfile) > 0) {
-    print line
-  }
+                  while ((getline line < incfile) > 0) {
+                    print line
+                  }
 
-  close(incfile)
-  next
-}
+                  close(incfile)
+                  next
+                }
                 if (s ~ /^[a-z0-9_-]+:/) next
 
                 sub(/^\./, "", s)

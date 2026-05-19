@@ -149,7 +149,18 @@ jobs:
                   }
                   next
                 }
+                if (s ~ /^include:/) {
+  sub(/^include:/, "", s)
 
+  incfile="'$work'/" s
+
+  while ((getline line < incfile) > 0) {
+    print line
+  }
+
+  close(incfile)
+  next
+}
                 if (s ~ /^[a-z0-9_-]+:/) next
 
                 sub(/^\./, "", s)

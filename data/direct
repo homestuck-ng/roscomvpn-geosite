@@ -1,4 +1,5 @@
 include:apple
+include:private
 include:whitelist
 include:category-ru
 include:category-ads
